@@ -11,7 +11,7 @@ Usage :
 - check draw
 - check win
 
-##TODO
+## TODO
 - multiple game
 - IA opponent
 - better interface ?
