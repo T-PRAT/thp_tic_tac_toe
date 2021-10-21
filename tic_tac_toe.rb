@@ -18,11 +18,20 @@ player1 = Player.new(gets.chomp, "X")
 display.pseudo("2")
 player2 = Player.new(gets.chomp, "O")
 player = player1
+display.init($h, player1, player2)
 while (true)
 	display.head
-	display.board($h, player1, player2)
+	display.board
 	display.ask(player.name)
-	game.action(player.symbol, gets.chomp)
+	while (ret = game.action(player.symbol, gets.chomp)) != 0
+		puts ret
+		case ret
+			when 1
+				display.err1(player.name)
+			when 2
+				display.err2(player.name)
+		end
+	end
 	player == player1 ? player = player2 : player = player1
 end
 
